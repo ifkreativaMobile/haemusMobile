@@ -909,7 +909,7 @@ function LoadMap() {
 
 
         var locations = [
-            ['<span class="place-title">Телекомунициски центар Скопје</span><br><span class="map-address">Адреса: Орце Николов бб</span><br><span class="map-address">Архитект: Јанко Константинов</span><br><span class="map-text">Објектот е сместен на агол од два фреквентни булевари и доминира во просторот. Поштенскиот комплекс бил реализиран во неколку етапи... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.998051, 21.429798, '/images/demo/marker.png', ]
+            ['<span class="place-title">Телекомунициски центар Скопје</span><br><span class="map-address">Адреса: Орце Николов бб</span><br><span class="map-address">Архитект: Јанко Константинов</span><br><span class="map-text">Објектот е сместен на агол од два фреквентни булевари и доминира во просторот. Поштенскиот комплекс бил реализиран во неколку етапи... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.998051, 21.429798, 'images/demo/marker.png', ]
         ];
 
 
