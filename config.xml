@@ -1,9 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="mk.ihr.app" version="2.0.1" versionCode="20001" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-  <name>Институции под лупа</name>
+<widget id="mk.haemus.app" version="1.0.1" versionCode="10001" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+  <name>Skopje Modernistic Tours</name>
   <description>
-    Мобилната апликација, "Институции под лупа" на Институтот за човекови права е уникатна алатка за полесен пристап до информациите добиени од мониторингот на Судскиот совет, Комисијата за спречување и заштита од дискриминација и Државната комисија за спречување на корупција.
-    Апликацијата функционира во насока кон зајакнување на јавниот надзор над работата на овие институции, со цел поефективно остварување на нивните надлежности во јавен интерес. Преку објавување на бриф извештаи  и новости, оваа алатка има за цел зголемување на нивната транспарентност, отчетност и ефективност.
+    Мобилна апликација, "Skopje modernistic tours"
   </description>
   <author email="info@ifkreativa.com" href="http://ifkreativa.com">
     IF Kreativa
@@ -61,7 +60,7 @@
   <plugin name="cordova-plugin-dialogs" source="npm" spec="1.3.4"/>
   <plugin name="cordova-plugin-uniquedeviceid" source="npm" spec="1.3.2" />
   <plugin name="cordova-plugin-statusbar" source="npm" spec="1.0.0" />
-  <plugin name="pushwoosh-cordova-plugin@7.0.8" source="npm"/>
+  <!--<plugin name="pushwoosh-cordova-plugin@7.0.8" source="npm"/>-->
   <gap:plugin name="cordova-plugin-whitelist" source="npm" />
   <!--<gap:plugin name="pushwoosh-pgb-plugin" source="npm" />-->
 
