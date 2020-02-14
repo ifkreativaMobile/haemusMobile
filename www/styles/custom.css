@@ -1,0 +1,22 @@
+.homepage-cover p { color: rgba(255,255,255,0.8) !important; line-height: 24px;}
+.homepage-cover .read-cover { text-align:left; float:left;  }
+.gm-style-iw-d div { padding:10px 5px; max-height:300px; }
+.place-title { font-size: 14px; font-weight: bold; }
+.map-address { font-size: 13px; font-weight: 500; }
+.map-text { font-size: 13px; display:block; margin-top:6px; }
+.place-link { color:#d20000; display:block; margin-top:4px; }
+
+.tab-content { padding:25px !important; font-size:13px; line-height:20px; }
+.tab-content ul { margin-top:15px; margin-bottom:15px; }
+.tab-content ul li { line-height:20px; }
+
+.page-blog-title { width:100%; position:relative; float:left; }
+.page-blog-tags-wrap { margin-top:5px; position:relative; float:left; width:100%; }
+.page-blog-list .page-blog-tags { font-size:14px; font-weight:normal; }
+.page-blog-content p { font-size:12px; line-height:18px; }
+.place-page-link { color:#d20000; display:block; position:relative; float:left; width:100%; }
+.place-info { padding-bottom:10px; border-bottom:1px solid #eee; margin-bottom:10px; }
+
+.place-text { line-height:20px; color:#555 }
+.lh20 { line-height:20px !important; }
+.mb10 { margin-bottom:10px; }
