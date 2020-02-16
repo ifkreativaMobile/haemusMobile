@@ -910,7 +910,9 @@ function LoadMap() {
 
 
         var locations = [
-            ['<span class="place-title">Телекомунициски центар Скопје</span><br><span class="map-address">Адреса: Орце Николов бб</span><br><span class="map-address">Архитект: Јанко Константинов</span><br><span class="map-text">Објектот е сместен на агол од два фреквентни булевари и доминира во просторот. Поштенскиот комплекс бил реализиран во неколку етапи... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.998051, 21.429798, 'images/demo/marker.png', ]
+            ['<span class="place-title">Телекомунициски центар Скопје</span><br><span class="map-address">Адреса: Орце Николов бб</span><br><span class="map-address">Архитект: Јанко Константинов</span><br><span class="map-text">Објектот е сместен на агол од два фреквентни булевари и доминира во просторот. Поштенскиот комплекс бил реализиран во неколку етапи... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.998051, 21.429798, 'images/demo/marker.png'],
+            ['<span class="place-title">МАНУ</span><br><span class="map-address">Адреса: Бул. Крсте Петков Мисирков, бр.2</span><br><span class="map-address">Архитект: Борис Чипан</span><br><span class="map-text">Објектот на Македонската академија на науките и уметностите, како објект на највисокото научно тело на Република Македонија, претставува дел од широ... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.996295, 21.441305, 'images/demo/marker.png'],
+            ['<span class="place-title">Македонска радиотелевизија</span><br><span class="map-address">Адреса: Бул. Гоце Делчев, бб</span><br><span class="map-address">Архитект: Харалампи Јосифовски, Нако Манов</span><br><span class="map-text">Објектот на некогашната Радио телевизија Скопје претставува сложена просторна целина, која има вертикален кубус за редакци... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.996690, 21.444339, 'images/demo/marker.png']
         ];
 
 
