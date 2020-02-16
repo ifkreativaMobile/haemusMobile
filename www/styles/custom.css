@@ -24,3 +24,13 @@
 .place-page-link { margin-bottom: 20px; color: #499bea; cursor:pointer}
 .page-blog-content p { margin-bottom:5px;}
 .back-to-top-badge { border-radius:8px; background:#d20000; text-transform:uppercase; line-height:34px;}
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
