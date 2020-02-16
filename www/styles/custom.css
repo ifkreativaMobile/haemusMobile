@@ -20,3 +20,7 @@
 .place-text { line-height:20px; color:#555 }
 .lh20 { line-height:20px !important; }
 .mb10 { margin-bottom:10px; }
+.display-ib { display:inline-block}
+.place-page-link { margin-bottom: 20px; color: #499bea; cursor:pointer}
+.page-blog-content p { margin-bottom:5px;}
+.back-to-top-badge { border-radius:8px; background:#d20000; text-transform:uppercase; line-height:34px;}
