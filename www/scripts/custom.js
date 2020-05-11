@@ -1322,7 +1322,7 @@ function LoadTour(model) {
     $("#tab-2").html(iteniraries);
     LoadMapPath(selectedTour);
 
-    $("#booking-link").attr("onclick", "window.open('" + selectedTour.BookingLink + "', '_system'); return false;");
+    $("#booking-link").attr("onclick", "navigator.app.loadUrl('" + selectedTour.BookingLink + "', { openExternal:true });");
 }
 
 function truncateString(str, length) {
