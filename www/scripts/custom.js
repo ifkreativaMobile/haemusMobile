@@ -1196,7 +1196,8 @@ function LoadPlace(model) {
     info = info + "<span><b>Architects: </b>" + place.Authors + "</span><br />";
     info = info + "<span><b>Year: </b>" + place.Year + "</span>";
     info = info + "</div>";
-    info = info + "<p class='place-text half-bottom'>" + place.Description + "</p>";
+
+    info = info + "<div class='wrap-desc place-text half-bottom'>" + place.Description + "</div>";
     info = info + "<div class='responsive-video full-bottom'>" + place.YouTube;
     info = info + "</div>";
     info = info + " <div class='decoration'></div>";
@@ -1249,6 +1250,7 @@ function LoadSiteCategory(model) {
         //html = html + "<h3><a onclick='SetActivePlaceID(" + site.SiteID + ")' href='place.html'>" + site.Name + "</a></h3>";
         //html = html + "</div>";
 
+        html = html + "<div class='site-category-item'>"
         html = html + "<img data-original=" + site.CoverImage + " alt='img' class='responsive-image' src='" + site.CoverImage + "' style='display: block;'>";
         html = html + "<h4 class='page-blog-title'>" + site.Name + "</h4>";
         html = html + "<div class='page-blog-tags-wrap'>";
@@ -1258,7 +1260,8 @@ function LoadSiteCategory(model) {
         html = html + "</div>";
         html = html + "<div class='page-blog-content'>" + truncateString(site.Description, 250);
         html = html + "</div>";
-        html = html + "<a class='place-page-link' onclick='SetActivePlaceID(" + site.SiteID + ", 'sites.html')' href='place.html'>Read More</a>";
+        html = html + "<a class='place-page-link' onclick='SetActivePlaceID(" + site.SiteID + ", `sites.html`)' href='place.html'>Read More</a>";
+        html = html + "</div>";
     }
 
     html = html + "</div>";
@@ -1292,7 +1295,7 @@ function LoadTour(model) {
         sites = sites + "<strong class='page-blog-tags'>Year: " + site.Year + "</strong>";
         sites = sites + "</div>";
         sites = sites + "<div class='page-blog-content'>" + site.Description + "</div>";
-        sites = sites + "<a class='place-page-link' onclick='SetActivePlaceID(" + site.SiteID + ", 'tour.html')' href='place.html'>Read More</a>";
+        sites = sites + "<a class='place-page-link' onclick='SetActivePlaceID(" + site.SiteID + ", `tour.html`)' href='place.html'>Read More</a>";
     }
     sites = sites + "<div class='clear'></div>";
     $("#wrap-sites").html(sites);
