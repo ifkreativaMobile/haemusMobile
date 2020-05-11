@@ -1089,8 +1089,8 @@ function scrollToTop() {
 
 function getModel(type)
 {
-    //var domain = "https://haemus.ifkreativa.com";
-    var domain = "https://localhost:44399/";
+    var domain = "https://haemus.ifkreativa.com";
+    //var domain = "https://localhost:44399/";
 
     $.ajax({
         //url: domain + "/api/updateHits",

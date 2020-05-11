@@ -174,51 +174,54 @@ function onPause() {
 
 function CloseApp()
 {
-    if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+    if (confirm("Are you sure you want to exit app?")) {
         navigator.app.exitApp();
     }
 }
 
 function onBackKeyDown(e) {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (localStorage.page) {
-        if (localStorage.page == "homepage")
-        {
-            if (confirm("Are you sure you want to exit app?")) {
-                  navigator.app.exitApp();
-            }
-        }
-        else
-        {
-            window.location.href = "index.html";
-            localStorage.page = "homepage";
-        }
-        //if (localStorage.page == "homepage") {
-        //    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-
-        //    }
-        //    else if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
-        //        navigator.app.exitApp();
-        //    }
-        //}
-        //else {
-        //    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-        //        // IOS DEVICE
-        //        history.go(-2);
-        //    } else if (userAgent.match(/Android/i)) {
-        //        // ANDROID DEVICE
-        //        history.go(-1);
-        //        navigator.app.backHistory();
-        //    } else {
-        //        // EVERY OTHER DEVICE
-        //        history.go(-1);
-        //        history.go(-1);
-        //    }
-        //}
+    if (confirm("Are you sure you want to exit app?")) {
+        navigator.app.exitApp();
     }
-    else {
+    //if (localStorage.page) {
+    //    if (localStorage.page == "homepage")
+    //    {
+    //        if (confirm("Are you sure you want to exit app?")) {
+    //              navigator.app.exitApp();
+    //        }
+    //    }
+    //    else
+    //    {
+    //        window.location.href = "index.html";
+    //        localStorage.page = "homepage";
+    //    }
+    //    //if (localStorage.page == "homepage") {
+    //    //    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
 
-    }
+    //    //    }
+    //    //    else if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+    //    //        navigator.app.exitApp();
+    //    //    }
+    //    //}
+    //    //else {
+    //    //    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+    //    //        // IOS DEVICE
+    //    //        history.go(-2);
+    //    //    } else if (userAgent.match(/Android/i)) {
+    //    //        // ANDROID DEVICE
+    //    //        history.go(-1);
+    //    //        navigator.app.backHistory();
+    //    //    } else {
+    //    //        // EVERY OTHER DEVICE
+    //    //        history.go(-1);
+    //    //        history.go(-1);
+    //    //    }
+    //    //}
+    //}
+    //else {
+
+    //}
 }
 
 function onMenuKeyDown() {
