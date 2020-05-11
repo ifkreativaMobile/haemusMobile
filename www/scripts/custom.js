@@ -1237,7 +1237,7 @@ function LoadSiteCategory(model) {
     html = html + "<p>List of " + category.Sites.length + " sites found</p>";
     html = html + "<i class='fa fa-building-o'></i></div>";
     html = html + "<div class='overlay'></div>";
-    html = html + "<img class='' src='images/demo/modern-skopje.jpg' alt='img'></div>";
+    html = html + "<img class='' src='images/demo/proba.jpg' alt='img'></div>";
 
     
     html = html + "<div class='sites-list'>";
@@ -1321,6 +1321,8 @@ function LoadTour(model) {
     iteniraries = iteniraries + " <div class='clear'></div>";
     $("#tab-2").html(iteniraries);
     LoadMapPath(selectedTour);
+
+    $("#booking-link").attr("onclick", "window.open('" + selectedTour.BookingLink + "', '_system'); return false;");
 }
 
 function truncateString(str, length) {
