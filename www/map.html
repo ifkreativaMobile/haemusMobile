@@ -40,30 +40,17 @@
         <div class="page-preloader page-preloader-dark">
             <img class="page-preload" src="images/preload.gif">
         </div>
+
         <div class="header header-dark">
             <a href="#" class="header-icon-1 show-left-sidebar"><i class="fa fa-navicon"></i></a>
             <a href="#" class="header-logo"></a>
-            <a class="header-icon-4" href="tours.html" title="back"><i class="fa fa-angle-left"></i></a>
+            <a class="header-icon-4" href="index.html" title="back"><i class="fa fa-angle-left"></i></a>
         </div>
+
         <div id="page-content" class="page-content">
             <div id="page-content-scroll">
                 <div id="page-content-scroll">
-                    <div id="googlemappath" style="width: 100%; height: 400px;"></div>
-                    <ul class="tabs">
-                        <li class="tab-link active-tab" data-tab="tab-1">About Tour</li>
-                        <li class="tab-link" data-tab="tab-2">Internaries</li>
-                        <li class="tab-link" data-tab="tab-3">Sites</li>
-                    </ul>
-
-                    <div id="tab-1" class="tab-content active-tab-content tour-main" style="display: block;">
-                    </div>
-                    <div id="tab-2" class="tab-content tab-internary" style="display:none">
-                        
-                    </div>
-                    <div id="tab-3" class="tab-content" style="display: none;">
-                        <div id="wrap-sites" class="page-blog-list"></div>
-                    </div>
-                    <a id="booking-link" href="#" class="tour-book">Book tour</a>
+                    <div id="googlemap" style="width: 100%; height: 100%;"></div>
                 </div>
                 
                 </div>
@@ -134,4 +121,65 @@
         </div>
         <div class="background"></div>
     </div>
-</body><a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Back to top</a>
+</body>
+
+
+<!--<script type="text/javascript">
+    $("document").ready(function () {
+        LoadMap();
+    })
+
+    function LoadMap() {
+        var markers = [];
+        function initialize() {
+
+            var mapOptions = {
+                zoom: 14,
+                center: new google.maps.LatLng(41.995914, 21.431422),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI: true
+            }
+            var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
+
+
+            var locations = [
+                ['<span class="place-title">Телекомунициски центар Скопје</span><br><span class="map-address">Адреса: Орце Николов бб</span><br><span class="map-address">Архитект: Јанко Константинов</span><br><span class="map-text">Објектот е сместен на агол од два фреквентни булевари и доминира во просторот. Поштенскиот комплекс бил реализиран во неколку етапи... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.998051, 21.429798, '/images/demo/marker.png', ]
+            ];
+
+
+            var marker, i;
+            var infowindow = new google.maps.InfoWindow();
+
+
+            google.maps.event.addListener(map, 'click', function () {
+                infowindow.close();
+            });
+
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    icon: locations[i][3]
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+
+                markers.push(marker);
+            }
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        function myClick(id) {
+            google.maps.event.trigger(markers[id], 'click');
+        }
+    }
+
+</script>-->
+

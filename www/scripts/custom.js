@@ -884,8 +884,24 @@
             $('#page-content, .landing-page').addClass('fadeIn show-containers');
             if ($("#googlemap").length > 0)
             {
-                LoadMap();
+                getModel("map");
             }
+            else if ($("#googlemappath").length > 0) {
+                getModel("tour");
+            }
+            else if ($("#tours-wrap").length > 0) {
+                getModel("tours");
+            }
+            else if ($("#sitecategories-wrap").length > 0) {
+                getModel("site-categories");
+            }
+            else if ($("#sitecategory-wrap").length > 0) {
+                getModel("site-category");
+            }
+            else if ($("#place-slider-wrap").length > 0) {
+                getModel("place");
+            }
+            
             scrollToTop();
         }
       };
@@ -896,25 +912,29 @@
 });
 
 
-function LoadMap() {
+function LoadMap(model) {
     var markers = [];
     function initialize() {
 
         var mapOptions = {
-            zoom: 14,
+            zoom: 13,
             center: new google.maps.LatLng(41.995914, 21.431422),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true
         }
         var map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
 
-
-        var locations = [
-            ['<span class="place-title">Телекомунициски центар Скопје</span><br><span class="map-address">Адреса: Орце Николов бб</span><br><span class="map-address">Архитект: Јанко Константинов</span><br><span class="map-text">Објектот е сместен на агол од два фреквентни булевари и доминира во просторот. Поштенскиот комплекс бил реализиран во неколку етапи... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.998051, 21.429798, 'images/demo/marker.png'],
-            ['<span class="place-title">МАНУ</span><br><span class="map-address">Адреса: Бул. Крсте Петков Мисирков, бр.2</span><br><span class="map-address">Архитект: Борис Чипан</span><br><span class="map-text">Објектот на Македонската академија на науките и уметностите, како објект на највисокото научно тело на Република Македонија, претставува дел од широ... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.996295, 21.441305, 'images/demo/marker.png'],
-            ['<span class="place-title">Македонска радиотелевизија</span><br><span class="map-address">Адреса: Бул. Гоце Делчев, бб</span><br><span class="map-address">Архитект: Харалампи Јосифовски, Нако Манов</span><br><span class="map-text">Објектот на некогашната Радио телевизија Скопје претставува сложена просторна целина, која има вертикален кубус за редакци... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.996690, 21.444339, 'images/demo/marker.png']
-        ];
-
+        //var locations = [
+        //    ['<span class="place-title">Телекомунициски центар Скопје</span><br><span class="map-address">Адреса: Орце Николов бб</span><br><span class="map-address">Архитект: Јанко Константинов</span><br><span class="map-text">Објектот е сместен на агол од два фреквентни булевари и доминира во просторот. Поштенскиот комплекс бил реализиран во неколку етапи... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.998051, 21.429798, 'images/demo/marker.png'],
+        //    ['<span class="place-title">МАНУ</span><br><span class="map-address">Адреса: Бул. Крсте Петков Мисирков, бр.2</span><br><span class="map-address">Архитект: Борис Чипан</span><br><span class="map-text">Објектот на Македонската академија на науките и уметностите, како објект на највисокото научно тело на Република Македонија, претставува дел од широ... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.996295, 21.441305, 'images/demo/marker.png'],
+        //    ['<span class="place-title">Македонска радиотелевизија</span><br><span class="map-address">Адреса: Бул. Гоце Делчев, бб</span><br><span class="map-address">Архитект: Харалампи Јосифовски, Нако Манов</span><br><span class="map-text">Објектот на некогашната Радио телевизија Скопје претставува сложена просторна целина, која има вертикален кубус за редакци... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.996690, 21.444339, 'images/demo/marker.png']
+        //];
+        var locations = [];
+        for (var j = 0; j < model["Sites"].length; j++ )
+        {
+            var site = model["Sites"][j];
+            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitects: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.Description, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `map.html`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
+        }
 
         var marker, i;
         var infowindow = new google.maps.InfoWindow();
@@ -950,6 +970,105 @@ function LoadMap() {
     initialize();
 }
 
+function LoadMapPath(model) {
+    var markers = [];
+    function initialize() {
+
+        var mapOptions = {
+            zoom: 14,
+            center: new google.maps.LatLng(41.996295, 21.441305),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+        }
+        var map = new google.maps.Map(document.getElementById("googlemappath"), mapOptions);
+
+        var locations = [];
+        for (var j = 0; j < model["Sites"].length; j++) {
+            var site = model["Sites"][j];
+            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitects: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.Description, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `tour.html`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
+        }
+
+        var tourPaths = [];
+        for (var j = 0; j < model["Sites"].length; j++) {
+            var site = model["Sites"][j];
+            tourPaths.push({ lat: parseFloat(site.Latitude), lng: parseFloat(site.Longitude) });
+        }
+
+        //var locations = [
+        //    ['<span class="place-title">Телекомунициски центар Скопје</span><br><span class="map-address">Адреса: Орце Николов бб</span><br><span class="map-address">Архитект: Јанко Константинов</span><br><span class="map-text">Објектот е сместен на агол од два фреквентни булевари и доминира во просторот. Поштенскиот комплекс бил реализиран во неколку етапи... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.998051, 21.429798, 'images/demo/marker.png'],
+        //    ['<span class="place-title">МАНУ</span><br><span class="map-address">Адреса: Бул. Крсте Петков Мисирков, бр.2</span><br><span class="map-address">Архитект: Борис Чипан</span><br><span class="map-text">Објектот на Македонската академија на науките и уметностите, како објект на највисокото научно тело на Република Македонија, претставува дел од широ... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.996295, 21.441305, 'images/demo/marker.png'],
+        //    ['<span class="place-title">Македонска радиотелевизија</span><br><span class="map-address">Адреса: Бул. Гоце Делчев, бб</span><br><span class="map-address">Архитект: Харалампи Јосифовски, Нако Манов</span><br><span class="map-text">Објектот на некогашната Радио телевизија Скопје претставува сложена просторна целина, која има вертикален кубус за редакци... </span><a class="place-link" href="/place.html">Прочитај повеќе</a>', 41.996690, 21.444339, 'images/demo/marker.png']
+        //];
+
+        //var tourPaths = [
+        //    { lat: 41.998051, lng: 21.429798 },
+        //    { lat: 41.996295, lng: 21.441305 },
+        //    { lat: 41.99690, lng: 21.444339 }
+        //];
+
+
+        var lineSymbol = {
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+        };
+        function animateCircle(line) {
+            var count = 0;
+            window.setInterval(function () {
+                count = (count + 1) % 200;
+
+                var icons = line.get('icons');
+                icons[0].offset = (count / 2) + '%';
+                line.set('icons', icons);
+            }, 20);
+        }
+        var tourPath = new google.maps.Polyline({
+            path: tourPaths,
+            geodesic: true,
+            strokeColor: '#D20000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2,
+            icons: [{
+                icon: lineSymbol,
+                offset: '50%'
+            }]
+        });
+      
+
+        tourPath.setMap(map);
+        animateCircle(tourPath);
+        var marker, i;
+        var infowindow = new google.maps.InfoWindow();
+
+
+        google.maps.event.addListener(map, 'click', function () {
+            infowindow.close();
+        });
+
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map,
+                icon: locations[i][3]
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+
+            markers.push(marker);
+        }
+
+    }
+    //google.maps.event.addDomListener(window, 'load', initialize);
+
+    function myClick(id) {
+        google.maps.event.trigger(markers[id], 'click');
+    }
+    initialize();
+}
+
 function scrollToTop() {
     $('#page-content-scroll').on('scroll', function () {
         var total_scroll_height = $('#page-content-scroll')[0].scrollHeight
@@ -967,3 +1086,265 @@ function scrollToTop() {
         }
     });
 }
+
+function getModel(type)
+{
+    //var domain = "https://haemus.ifkreativa.com";
+    var domain = "https://localhost:44399/";
+
+    $.ajax({
+        //url: domain + "/api/updateHits",
+        //data: JSON.stringify({ guid: guid, uuid: device.uuid}),
+        url: domain + "/mk/backend/api/getmodel",
+        async: false,
+        type: "POST",
+        dataType: "jsonp",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            localStorage.model = data;
+            if (type == "map") {
+                LoadMap(data);
+            }
+            else if (type == "tours")
+            {
+                LoadTours(data);
+            }
+            else if (type == "tour") {
+                LoadTour(data);
+            }
+            else if (type == "site-categories")
+            {
+                LoadSiteCategories(data);
+            }
+            else if (type == "site-category") {
+                LoadSiteCategory(data);
+            }
+            else if (type == "place") {
+                LoadPlace(data);
+            } 
+        },
+        error: function (e) {
+            //alert(e.responseText);
+            data = localStorage.model;
+            if (type == "map") {
+                LoadMap(data);
+            }
+            else if (type == "tours") {
+                LoadTours(data);
+            }
+            else if (type == "tour") {
+                LoadTour(data);
+            }
+            else if (type == "site-categories") {
+                LoadSiteCategories(data);
+            }
+            else if (type == "site-category") {
+                LoadSiteCategory(data);
+            }
+            else if (type == "place") {
+                LoadPlace(data);
+            }
+        }
+    })
+}
+
+function LoadTours(model)
+{
+    var html = "";
+    var tours = model["Tours"];
+    for (var j = 0; j < tours.length; j++ )
+    {
+        var tour = tours[j];
+        html = html + "<div onclick='SetTourActive(" + tour.TourID + ")' href='tour.html?tourID=" + tour.TourID + "' class='store-card-item'>";
+        html = html + "<em class='bg-red-dark'><i class='fa fa-clock-o'></i> " + tour.TotalHours + "</em>";
+        html = html + "<img class='responsive-image' data-original='" + tour.CoverImage + "' src='" + tour.CoverImage + "' alt='img'>";
+        html = html + "<h3><a href='tour.html?tourID=" + tour.TourID + "'>" + tour.Name + "</a></h3>";
+        html = html + "</div>";
+    }
+
+    $("#tours-wrap").html(html);
+}
+
+function LoadPlace(model) {
+    var placeID = localStorage.PlaceActiveID
+    var place;
+    var html = "";
+    var places = model["Sites"];
+
+    for (var j = 0; j < places.length; j++) {
+        if (places[j].SiteID == placeID)
+            place = places[j];
+    }
+
+    var slider = "";
+    var info = "";
+
+    for (var j = 0; j < place.GalleryImages.length; j++) {
+
+        slider = slider + "<div class='swiper-slide'>";
+        slider = slider + "<img class='responsive-image' src='" + place.GalleryImages[j] + "' alt='img'>";
+        slider = slider + "<div class='slider-caption'></div>";
+        slider = slider + "<div class='overlay'></div>";
+        slider = slider + "</div>";
+    }
+                            
+    $("#place-slider-wrap").html(slider);
+    
+    info = info + "<h4 class='bold'>" + place.Name + "</h4>";
+    info = info + "<div class='place-info'>";
+    info = info + "<span><b>Address: </b>" + place.Address + "</span><br />";
+    info = info + "<span><b>Architects: </b>" + place.Authors + "</span><br />";
+    info = info + "<span><b>Year: </b>" + place.Year + "</span>";
+    info = info + "</div>";
+    info = info + "<p class='place-text half-bottom'>" + place.Description + "</p>";
+    info = info + "<div class='responsive-video full-bottom'>" + place.YouTube;
+    info = info + "</div>";
+    info = info + " <div class='decoration'></div>";
+
+    $("#").attr("href", localStorage.Previous);
+    $("#place-info-wrap").html(info);
+
+}
+
+function LoadSiteCategories(model)
+{
+    var html = "";
+    var categories = model["SiteCategories"];
+    for (var j = 0; j < categories.length; j++) {
+        var category = categories[j];
+        html = html + "<a href='sites.html' onclick='SetSiteCategoryActive(" + category.ID + ")' class='' >";
+        html = html + "<img class='responsive-image' src='" + category.Icon + "' alt='img'>";
+        html = html + "<span>" + category.Name + "</span></a>";
+    }
+
+    $("#sitecategories-wrap").html(html);
+}
+
+function LoadSiteCategory(model) {
+    var catID = localStorage.CategoryActiveID;
+    var category;
+
+    var html = "";
+    var categories = model["SiteCategories"];
+    for (var j = 0; j < categories.length; j++) {
+        if (categories[j].ID == catID)
+            category = categories[j];
+    }
+
+    html = html + "<div class='content-strip mb0'>";
+    html = html + "<div class='strip-content'>";
+    html = html + "<h4>" + category.Name  + "</h4>";
+    html = html + "<p>List of " + category.Sites.length + " sites found</p>";
+    html = html + "<i class='fa fa-building-o'></i></div>";
+    html = html + "<div class='overlay'></div>";
+    html = html + "<img class='' src='images/demo/modern-skopje.jpg' alt='img'></div>";
+
+    
+    html = html + "<div class='sites-list'>";
+
+    for (var j = 0; j < category.Sites.length; j++) {
+        var site = category.Sites[j];
+        //html = html + "<div onclick='SetActivePlaceID(" + site.SiteID + ")' href='place.html' class='store-card-item'>";
+        //html = html + "<img class='responsive-image' src='" + site.CoverImage + "' alt='img'>";
+        //html = html + "<h3><a onclick='SetActivePlaceID(" + site.SiteID + ")' href='place.html'>" + site.Name + "</a></h3>";
+        //html = html + "</div>";
+
+        html = html + "<img data-original=" + site.CoverImage + " alt='img' class='responsive-image' src='" + site.CoverImage + "' style='display: block;'>";
+        html = html + "<h4 class='page-blog-title'>" + site.Name + "</h4>";
+        html = html + "<div class='page-blog-tags-wrap'>";
+        html = html + "<strong class='page-blog-tags'>Address: " + site.Address + "</strong></br>";
+        html = html + "<strong class='page-blog-tags'>Arhitects: " + site.Authors + "</strong></br>";
+        html = html + "<strong class='page-blog-tags'>Year: " + site.Year + "</strong>";
+        html = html + "</div>";
+        html = html + "<div class='page-blog-content'>" + truncateString(site.Description, 250);
+        html = html + "</div>";
+        html = html + "<a class='place-page-link' onclick='SetActivePlaceID(" + site.SiteID + ", 'sites.html')' href='place.html'>Read More</a>";
+    }
+
+    html = html + "</div>";
+
+    $("#sitecategory-wrap").html(html);
+}
+
+function LoadTour(model) {
+    var html = "";
+    var tours = model["Tours"];
+    var selectedTour;
+    for (var j = 0; j < tours.length; j++) {
+        var tour = tours[j];
+        if (tour.TourID == localStorage.TourActiveID)
+            selectedTour = tours[j];
+    }
+
+    $("#tab-1").html(selectedTour.Description);
+    var iteniraries = "";
+    var sites = "";
+
+    for (var j = 0; j < selectedTour.Sites.length; j++)
+    {
+        var site = selectedTour.Sites[j];
+
+        sites = sites + "<img data-original=" + site.CoverImage + " alt='img' class='responsive-image' src='" + site.CoverImage + "' style='display: block;'>";
+        sites = sites + "<h4 class='page-blog-title'>" + site.Name + "</h4>";
+        sites = sites + "<div class='page-blog-tags-wrap'>";
+        sites = sites + "<strong class='page-blog-tags'>Address: " + site.Address + "</strong>";
+        sites = sites + "<strong class='page-blog-tags'>Arhitects: " + site.Authors + "</strong>";
+        sites = sites + "<strong class='page-blog-tags'>Year: " + site.Year + "</strong>";
+        sites = sites + "</div>";
+        sites = sites + "<div class='page-blog-content'>" + site.Description + "</div>";
+        sites = sites + "<a class='place-page-link' onclick='SetActivePlaceID(" + site.SiteID + ", 'tour.html')' href='place.html'>Read More</a>";
+    }
+    sites = sites + "<div class='clear'></div>";
+    $("#wrap-sites").html(sites);
+
+    for (var j = 0; j < selectedTour.Iteniraries.length; j++) {
+        var itenirary = selectedTour.Iteniraries[j];
+
+        iteniraries = iteniraries + "<div class='internary'>";
+        iteniraries = iteniraries + "<div class='internary-left'>";
+        iteniraries = iteniraries + "<div class='internary-image-square'><img class='responsive-image' alt='img' src='" + itenirary.CoverImage + "' style='display: block;'></div>";
+        iteniraries = iteniraries + "<div class='center-text'><img class='responsive-image internary-walk-icon' alt='img' src='images/demo/walk.png' style='display: block;'></div>";
+        iteniraries = iteniraries + "<div class='center-text'>" + itenirary.WalkMinutes + " minutes</div>";
+        iteniraries = iteniraries + "<div class='center-text'><img class='responsive-image internary-drive-icon' alt='img' src='images/demo/drive.fw.png' style='display: block;'></div>";
+        iteniraries = iteniraries + "<div class='center-text'>" + itenirary.DriveMinutes + " minutes</div>";
+        iteniraries = iteniraries + "<div class='center-text'><i class='fa fa-long-arrow-down'></i></div>";
+        iteniraries = iteniraries + "</div>";
+        iteniraries = iteniraries + "<div class='internary-right'>";
+        iteniraries = iteniraries + "<h3 class='internary-title'>" + itenirary.Name + "</h3>";
+        iteniraries = iteniraries + "<div class='internary-duration'><i class='fa fa-play'></i> Visit duration " + itenirary.VisitDuration + "</div>";
+        iteniraries = iteniraries + "<div class='internary-open'><i class='fa fa-clock-o'></i> Hours: " + itenirary.WorkingHours + "</div>";
+        iteniraries = iteniraries + "<div class='internary-description'>" + itenirary.WhatToSee;
+        iteniraries = iteniraries + "</div>";
+        iteniraries = iteniraries + "</div></div>";
+    }
+
+    iteniraries = iteniraries + " <div class='clear'></div>";
+    $("#tab-2").html(iteniraries);
+    LoadMapPath(selectedTour);
+}
+
+function truncateString(str, length) {
+    return str.length > length ? str.substring(0, length - 3) + '...' : str
+}
+
+function SetTourActive(id)
+{
+    localStorage.TourActiveID = id;
+}
+
+function SetSiteCategoryActive(catID)
+{
+    localStorage.CategoryActiveID = catID;
+}
+
+function SetActivePlaceID(placeID, placeOrigin) {
+    localStorage.PlaceActiveID = placeID;
+    localStorage.Previous = placeOrigin;
+}
+
+
+
+                        
+                        
+                        
+                    

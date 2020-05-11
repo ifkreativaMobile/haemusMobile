@@ -1,10 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="mk.haemus.app" version="1.0.1" versionCode="10001" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-  <name>Skopje Modernistic Tours</name>
+  <name>The Modernist Architecture of Skopje</name>
   <description>
-    Мобилна апликација, "Skopje modernistic tours"
+    Following the devastating earthquake that struck Skopje on 26 July 1963, eighty eight countries from all around the world offered their tremendous human and financial assistance. Skopje suffered a disaster, but it was reconstructed, and became the pride of brotherhood and unity of Yugoslavia at that time, and a symbol of global solidarity. After the earthquake, we experienced an architectural expansion and, in a short period, from a city of debris, Skopje transformed into a modern city following all global architectural movements of that time.
+
+    The purpose of this application is to show the development of the city of Skopje and its modernist architecture in socialist times. The buildings belong to different movements of modern architecture, but still play a vital role in the economic, cultural and political life of the city of Skopje. The information is intended for all aficionados of architecture, especially the brutalist movement in architecture, since Skopje is considered to have the largest collection of brutalist concrete buildings that reflect this inspiring cosmic and undefined spatial design architecture.
+
+    The application is complemented with info on the buildings, as well as recommendations for itineraries and walks throughout the magnificent examples of Skopje's modernist architecture, offering a glimpse in the human connection of the places that are still shaping the local communities.
+
+    This application was developed by HAEMUS - Center for Scientific Research and Promotion of Culture as a part of the scientific research project "Radio Skopje Speaking", in cooperation with Forum Civil Peace Service (forumZFD) Skopje e.V. from Cologne.
+
   </description>
-  <author email="info@ifkreativa.com" href="http://ifkreativa.com">
+  <author email="info@ifkreativa.com" href="http://www.ifkreativa.com">
     IF Kreativa
   </author>
 
@@ -94,36 +101,37 @@
   <icon platform="webos" src="res/icon/webos/icon-64.png" />
   <icon platform="winphone" src="res/icon/windows-phone/icon-48.png" />
   <icon platform="winphone" role="background" src="res/icon/windows-phone/icon-173.png" />
+  
   <splash src="splash.png" />
-  <splash platform="android" qualifier="ldpi" src="images/startImage/English_portrait_ldpi.png" />
-  <splash platform="android" qualifier="mdpi" src="images/startImage/English_portrait_mdpi.png" />
-  <splash platform="android" qualifier="hdpi" src="images/startImage/English_portrait_hdpi.png" />
-  <splash platform="android" qualifier="xhdpi" src="images/startImage/English_portrait_xhdpi.png" />
+  <splash platform="android" qualifier="ldpi" src="images/startImage/English_portrait_ldpi.jpg" />
+  <splash platform="android" qualifier="mdpi" src="images/startImage/English_portrait_mdpi.jpg" />
+  <splash platform="android" qualifier="hdpi" src="images/startImage/English_portrait_hdpi.jpg" />
+  <splash platform="android" qualifier="xhdpi" src="images/startImage/English_portrait_xhdpi.jpg" />
   <splash platform="blackberry" src="res/screen/blackberry/screen-225.png" />
 
   <!-- iPhone and iPod touch -->
-  <splash src="images/splash/ios/Default.png" platform="ios" width="320" height="480" />
-  <splash src="images/splash/ios/Default@2x.png" platform="ios" width="640" height="960" />
+  <splash src="images/splash/ios/Default.jpg" platform="ios" width="320" height="480" />
+  <splash src="images/splash/ios/Default@2x.jpg" platform="ios" width="640" height="960" />
 
   <!-- iPhone 5 / iPod Touch (5th Generation) -->
-  <splash src="images/splash/ios/Default-568h@2x.png" platform="ios" width="640" height="1136" />
+  <splash src="images/splash/ios/Default-568h@2x.jpg" platform="ios" width="640" height="1136" />
 
   <!-- iPhone 6 -->
-  <splash src="images/splash/ios/Default-667h@2x.png" platform="ios" width="750" height="1334" />
-  <splash src="images/splash/ios/Default-Portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
-  <splash src="images/splash/ios/Default-Landscape-736h@3x.png" platform="ios" width="2208" height="1242" />
+  <splash src="images/splash/ios/Default-667h@2x.jpg" platform="ios" width="750" height="1334" />
+  <splash src="images/splash/ios/Default-Portrait-736h@3x.jpg" platform="ios" width="1242" height="2208" />
+  <splash src="images/splash/ios/Default-Landscape-736h@3x.jpg" platform="ios" width="2208" height="1242" />
 
   <!-- iPad -->
-  <splash src="images/splash/ios/Default-Portrait.png" platform="ios" width="768" height="1024" />
-  <splash src="images/splash/ios/Default-Landscape.png" platform="ios" width="1024" height="768" />
+  <splash src="images/splash/ios/Default-Portrait.jpg" platform="ios" width="768" height="1024" />
+  <splash src="images/splash/ios/Default-Landscape.jpg" platform="ios" width="1024" height="768" />
 
   <!-- Retina iPad -->
-  <splash src="images/splash/ios/Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
-  <splash src="images/splash/ios/Default-Landscape@2x.png" platform="ios" width="2048" height="1536" />
+  <splash src="images/splash/ios/Default-Portrait@2x.jpg" platform="ios" width="1536" height="2048" />
+  <splash src="images/splash/ios/Default-Landscape@2x.jpg" platform="ios" width="2048" height="1536" />
 
   <splash platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
   <access origin="*"/>
-  <access origin="*.pushwoosh.com"/>
+  <!--<access origin="*.pushwoosh.com"/>-->
   <allow-intent href="*" />
   <allow-navigation href="*" />
 </widget>

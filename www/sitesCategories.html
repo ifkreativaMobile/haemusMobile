@@ -29,7 +29,6 @@
     <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="styles/custom.css">
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD06lrBSO9CM6KIOt6lajeJCs88RXvvdRc"></script>
     <script type="text/javascript" src="scripts/jquery.js"></script>
     <script type="text/javascript" src="scripts/plugins.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
@@ -40,34 +39,39 @@
         <div class="page-preloader page-preloader-dark">
             <img class="page-preload" src="images/preload.gif">
         </div>
+
         <div class="header header-dark">
             <a href="#" class="header-icon-1 show-left-sidebar"><i class="fa fa-navicon"></i></a>
             <a href="#" class="header-logo"></a>
-            <a class="header-icon-4" href="tours.html" title="back"><i class="fa fa-angle-left"></i></a>
+            <a class="header-icon-4" href="index.html" title="back"><i class="fa fa-angle-left"></i></a>
         </div>
-        <div id="page-content" class="page-content">
-            <div id="page-content-scroll">
-                <div id="page-content-scroll">
-                    <div id="googlemappath" style="width: 100%; height: 400px;"></div>
-                    <ul class="tabs">
-                        <li class="tab-link active-tab" data-tab="tab-1">About Tour</li>
-                        <li class="tab-link" data-tab="tab-2">Internaries</li>
-                        <li class="tab-link" data-tab="tab-3">Sites</li>
-                    </ul>
 
-                    <div id="tab-1" class="tab-content active-tab-content tour-main" style="display: block;">
+
+        <div id="page-content" class="page-content">
+            <div id="page-content-scroll" class="sites-categories">
+                <div class="content-strip mb0">
+                    <div class="strip-content">
+                        <h4>Sites categories</h4>
+                        <p>Check out your interests!</p>
+                        <i class="fa fa-building-o"></i>
                     </div>
-                    <div id="tab-2" class="tab-content tab-internary" style="display:none">
-                        
-                    </div>
-                    <div id="tab-3" class="tab-content" style="display: none;">
-                        <div id="wrap-sites" class="page-blog-list"></div>
-                    </div>
-                    <a id="booking-link" href="#" class="tour-book">Book tour</a>
+                    <div class="overlay"></div>
+                    <img class="preload-image" data-original="images/demo/modern-skopje.jpg" alt="img">
                 </div>
-                
+
+                <div class="content sites-categories-content">
+                    <div id="sitecategories-wrap" class="sites-categories-images-wrap">
+                        <a href="sites.html" class="" title="Your caption here!"><img class="preload-image responsive-image" data-original="images/demo/stoneBridge.png" alt="img"><span>Museums</span></a>
+                        <a href="sites.html" class="" title="Your caption here!"><img class="preload-image responsive-image" data-original="images/demo/stoneBridge.png" alt="img"><span>Landmarks</span></a>
+                        <a href="sites.html" class="" title="Your caption here!"><img class="preload-image responsive-image" data-original="images/demo/stoneBridge.png" alt="img"><span>Parks</span></a>
+                        <a href="sites.html" class="" title="Your caption here!"><img class="preload-image responsive-image" data-original="images/demo/stoneBridge.png" alt="img"><span>Art galleries</span>s</a>
+                        <a href="sites.html" class="" title="Your caption here!"><img class="preload-image responsive-image" data-original="images/demo/stoneBridge.png" alt="img"><span>Shopping</span></a>
+                   
+                    </div>
                 </div>
             </div>
+        </div>
+
         <div class="sidebar-left">
             <div class="sidebar-scroll-left sidebar-dark">
                 <div class="sidebar-image">

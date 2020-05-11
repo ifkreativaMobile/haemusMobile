@@ -184,7 +184,7 @@ function onBackKeyDown(e) {
     if (localStorage.page) {
         if (localStorage.page == "homepage")
         {
-            if (confirm("Дали сте сигурни дека сакате да ја затворите апликацијата?")) {
+            if (confirm("Are you sure you want to exit app?")) {
                   navigator.app.exitApp();
             }
         }

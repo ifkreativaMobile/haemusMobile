@@ -23,8 +23,6 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 
-    <title>Epsilon 5.0</title>
-
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/menu.css">
     <link rel="stylesheet" type="text/css" href="styles/framework.css">
@@ -45,32 +43,21 @@
 
         <div class="header header-dark">
             <a href="#" class="header-icon-1 show-left-sidebar"><i class="fa fa-navicon"></i></a>
-            <a href="#" class="header-logo"></a>
-            <!--<a href="#" class="header-icon-4 show-right-sidebar"><i class="fa fa-envelope-o"></i></a>-->
+            <a href="#" class="header-logo">THE MODERNIST ARHITECTURE<br />OF SKOPJE</a>
+            <a class="header-icon-4" onclick="onBackKeyDown()" title="back"><i class="fa fa-angle-left"></i></a>
         </div>
+
 
         <div id="page-content" class="page-content">
             <div id="page-content-scroll">
-                <div class="coverpage-slider homepage-coverpage-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide cover-slide cover-screen" style="background-image:url(images/demo/modern-skopje.jpg);">
-                            <div class="homepage-cover">
-                                <h4>Modernistic Tour <strong class="color-red-dark">Skopje</strong></h4>
-                                <p>Денешната слика за архитектурата на Скопје е настаната како резултат на повеќеслојни модернизациски потфати во текот на 20 век, кои успеале да претворат една отоманска паланка развиена...</p>
-                                <div class="decoration"></div>
-                                <a href="tour.html" class="read-cover">Open Tour<i class="fa fa-arrow-right"></i></a>
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
-                        <div class="swiper-slide cover-slide cover-screen" style="background-image:url(images/demo/modern-skopje1.jpg);">
-                            <div class="homepage-cover">
-                                <h4>Museum Tour <strong class="color-red-dark">Skopje</strong></h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a ga...</p>
-                                <div class="decoration"></div>
-                                <a href="tour.html" class="read-cover">Open Tour<i class="fa fa-arrow-right"></i></a>
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
+                <div class="home-screen home-content container-fullscreen no-bottom">
+                    <!--<div class="home-content-image" style="background-image:url(images/demo/modern-skopje.jpg); background-size:cover; background-position:center;"></div>-->
+                    <div class="home-content-image" style="background-image:url(images/demo/proba.jpg); background-size:cover; background-position:center;"></div>
+                    <div class="home-content-icons">
+                        <div class="home-content-icon home-content-icon-border-bottom home-content-icon-border-right"><a href="map.html"><i class="fa fa-map"></i>Map</a></div>
+                        <div class="home-content-icon home-content-icon-border-bottom"><a href="tours.html"><i class="fa fa-map-signs"></i>Tours</a></div>
+                        <div class="home-content-icon home-content-icon-border-right"><a href="sitesCategories.html"><i class="fa fa-bank"></i>Sites</a></div>
+                        <div class="home-content-icon"><a href="contact.html"><i class="fa fa-envelope"></i>Contact</a></div>
                     </div>
                 </div>
             </div>
@@ -94,15 +81,21 @@
                         </a>
                     </div>
                     <div>
-                        <a class="menu-item" href="tour.html">
+                        <a class="menu-item" href="tours.html">
                             <i class="fa fa-navicon bg-green-dark"></i>
-                            <em>Modernistic Tour</em>
+                            <em>Tours</em>
                         </a>
                     </div>
                     <div>
-                        <a class="menu-item" href="tour.html">
+                        <a class="menu-item" href="map.html">
                             <i class="fa fa-navicon bg-green-dark"></i>
-                            <em>Other Tour</em>
+                            <em>Map</em>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="menu-item" href="sitesCategories.html">
+                            <i class="fa fa-navicon bg-green-dark"></i>
+                            <em>Sites</em>
                         </a>
                     </div>
                     <div>
@@ -114,141 +107,26 @@
                 </div>
                 <p class="sidebar-divider">Let's get social</p>
                 <div class="sidebar-menu">
-                    <a class="default-link menu-item" href="https://www.facebook.com/enabled.labs">
+                    <a class="default-link menu-item" href="https://www.facebook.com/haemus.org.mk/">
                         <i class="fa fa-facebook facebook-color"></i>
                         <em>Facebook</em>
                     </a>
-                    <a class="default-link menu-item" href="https://twitter.com/iEnabled">
+                    <a class="default-link menu-item" href="https://twitter.com/haemusorg?lang=en">
                         <i class="fa fa-twitter twitter-color"></i>
                         <em>Twitter</em>
                     </a>
                     <!--<a class="default-link menu-item" href="https://plus.google.com/u/1/100477648973116025417/posts">
-                        <i class="fa fa-google-plus google-color"></i>
-                        <em>Google Plus</em>
-                    </a>
-                    <a class="default-link menu-item" href="#">
-                        <i class="fa fa-youtube-play youtube-color"></i>
-                        <em>YouTube</em>
-                    </a>-->
-                </div>
-                <p class="sidebar-footer">Copyright 2015. All rights reserved</p>
-            </div>
-        </div>
-
-        <!--<div class="sidebar-right">
-            <div class="sidebar-scroll-right sidebar-dark">
-                <div class="sidebar-image">
-                    <h3>Let's get in touch!</h3>
-                    <em>Send a message or follow our socials</em>
-                    <div class="sidebar-overlay"></div>
-                    <img src="images/pictures/3.jpg" alt="img" class="responsive-image">
-                </div>
-                <div class="sidebar-divider no-bottom"></div>
-                <p class="sidebar-divider">Let's get social</p>
-                <div class="sidebar-menu">
-                    <a class="default-link menu-item" href="https://www.facebook.com/enabled.labs">
-                        <i class="fa fa-facebook facebook-color"></i>
-                        <em>Facebook</em>
-                    </a>
-                    <a class="default-link menu-item" href="https://twitter.com/iEnabled">
-                        <i class="fa fa-twitter twitter-color"></i>
-                        <em>Twitter</em>
-                    </a>
-                    <a class="default-link menu-item" href="https://plus.google.com/u/1/100477648973116025417/posts">
-                        <i class="fa fa-google-plus google-color"></i>
-                        <em>Google Plus</em>
-                    </a>
-                    <a class="default-link menu-item" href="#">
-                        <i class="fa fa-youtube-play youtube-color"></i>
-                        <em>YouTube</em>
-                    </a>
-                </div>
-                <p class="sidebar-divider">Send an email</p>
-                <div class="container no-bottom">
-                    <div class="sidebar-form contact-form no-bottom">
-                        <em>
-                            Your message is important to us and we reply to all of them in less than 48 hours.
-                        </em>
-                        <div class="formSuccessMessageWrap" id="formSuccessMessageWrap">
-                            Awesome! We'll get back to you!
-                        </div>
-                        <form action="php/contact.php" method="post" class="contactForm" id="contactForm">
-                            <fieldset>
-                                <div class="formValidationError" id="contactNameFieldError">Name is required!</div>
-                                <div class="formValidationError" id="contactEmailFieldError">Mail address required!</div>
-                                <div class="formValidationError" id="contactEmailFieldError2">Mail address must be valid!</div>
-                                <div class="formValidationError" id="contactMessageTextareaError">Message field is empty!</div>
-                                <div class="formFieldWrap">
-                                    <input onfocus="if (this.value=='Name') this.value = ''" onblur="if (this.value=='') this.value = 'Name'" type="text" name="contactNameField" value="Name" class="contactField requiredField" id="contactNameField" />
-                                </div>
-                                <div class="formFieldWrap">
-                                    <input onfocus="if (this.value=='Email') this.value = ''" onblur="if (this.value=='') this.value = 'Email'" type="text" name="contactEmailField" value="Email" class="contactField requiredField requiredEmailField" id="contactEmailField" />
-                                </div>
-                                <div class="formTextareaWrap">
-                                    <textarea onfocus="if (this.value=='Message') this.value = ''" onblur="if (this.value=='') this.value = 'Message'" name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea">Message</textarea>
-                                </div>
-                                <div class="formSubmitButtonErrorsWrap">
-                                    <input type="submit" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="SUBMIT" data-formId="contactForm" />
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-                <p class="sidebar-divider">Contact Us</p>
-                <div class="sidebar-menu">
-                    <a class="default-link menu-item" href="tel:+123 456 7890">
-                        <i class="fa fa-phone bg-green-dark"></i>
-                        <em>Call Us</em>
-                    </a>
-                    <a class="default-link menu-item" href="sms:+123 456 7890">
-                        <i class="fa fa-comment-o bg-blue-dark"></i>
-                        <em>Text Us</em>
-                    </a>
-                    <a class="default-link menu-item" href="mailto:someone@yoursite.com?subject=Message from ThemeForest">
-                        <i class="fa fa-envelope-o bg-magenta-dark"></i>
-                        <em>Mail Us</em>
-                    </a>
-                    <a class="menu-item close-sidebar" href="#">
-                        <i class="fa fa-times bg-red-dark"></i>
-                        <em>Close</em>
-                        <i class="fa fa-circle"></i>
-                    </a>
-                </div>
-                <p class="sidebar-footer">Copyright 2015. All rights reserved</p>
-            </div>
-        </div>-->
-
-        <div class="share-bottom share-dark">
-            <h3>Share Page</h3>
-            <div class="share-socials-bottom">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.themeforest.net/">
-                    <i class="fa fa-facebook facebook-color"></i>
-                    Facebook
-                </a>
-                <a href="https://twitter.com/home?status=Check%20out%20ThemeForest%20http://www.themeforest.net">
-                    <i class="fa fa-twitter twitter-color"></i>
-                    Twitter
-                </a>
-                <a href="https://plus.google.com/share?url=http://www.themeforest.net">
                     <i class="fa fa-google-plus google-color"></i>
-                    Google
+                    <em>Google Plus</em>
                 </a>
-                <a href="https://pinterest.com/pin/create/button/?url=http://www.themeforest.net/&media=https://0.s3.envato.com/files/63790821/profile-image.jpg&description=Themes%20and%20Templates">
-                    <i class="fa fa-pinterest-p pinterest-color"></i>
-                    Pinterest
-                </a>
-                <a href="sms:">
-                    <i class="fa fa-comment-o sms-color"></i>
-                    Text
-                </a>
-                <a href="mailto:?&subject=Check this page out!&body=http://www.themeforest.net">
-                    <i class="fa fa-envelope-o mail-color"></i>
-                    Email
-                </a>
-                <div class="clear"></div>
+                <a class="default-link menu-item" href="#">
+                    <i class="fa fa-youtube-play youtube-color"></i>
+                    <em>YouTube</em>
+                </a>-->
+                </div>
+                <p class="sidebar-footer">Copyright 2015. All rights reserved</p>
             </div>
         </div>
-
         <div class="background"></div>
     </div>
 </body><a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Back to top</a>
