@@ -933,7 +933,7 @@ function LoadMap(model) {
         for (var j = 0; j < model["Sites"].length; j++ )
         {
             var site = model["Sites"][j];
-            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitects: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.Description, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `map.html`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
+            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitects: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.shortDescription, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `map.html`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
         }
 
         var marker, i;
@@ -985,7 +985,7 @@ function LoadMapPath(model) {
         var locations = [];
         for (var j = 0; j < model["Sites"].length; j++) {
             var site = model["Sites"][j];
-            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitects: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.Description, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `tour.html`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
+            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitects: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.Description, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `tour.html?tourID=" + model.TourID + "`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
         }
 
         var tourPaths = [];
@@ -1193,6 +1193,7 @@ function LoadPlace(model) {
     info = info + "<h4 class='bold'>" + place.Name + "</h4>";
     info = info + "<div class='place-info'>";
     info = info + "<span><b>Address: </b>" + place.Address + "</span><br />";
+    info = info + "<span><b>Working hours: </b>" + place.WorkingHours + "</span><br />";
     info = info + "<span><b>Architects: </b>" + place.Authors + "</span><br />";
     info = info + "<span><b>Year: </b>" + place.Year + "</span>";
     info = info + "</div>";
@@ -1204,7 +1205,7 @@ function LoadPlace(model) {
 
     $("#").attr("href", localStorage.Previous);
     $("#place-info-wrap").html(info);
-
+    $("#back-place-btn").attr("href", localStorage.Previous);
 }
 
 function LoadSiteCategories(model)
@@ -1295,7 +1296,7 @@ function LoadTour(model) {
         sites = sites + "<strong class='page-blog-tags'>Year: " + site.Year + "</strong>";
         sites = sites + "</div>";
         sites = sites + "<div class='page-blog-content'>" + site.Description + "</div>";
-        sites = sites + "<a class='place-page-link' onclick='SetActivePlaceID(" + site.SiteID + ", `tour.html`)' href='place.html'>Read More</a>";
+        sites = sites + "<a class='place-page-link' onclick='SetActivePlaceID(" + site.SiteID + ", `tour.html?tourID=" + selectedTour.TourID + "`)' href='place.html'>Read More</a>";
     }
     sites = sites + "<div class='clear'></div>";
     $("#wrap-sites").html(sites);
