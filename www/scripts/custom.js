@@ -124,7 +124,7 @@
         var swiper_store_slider2 = new Swiper('.store-slider-2', {autoplay:3000});
         var swiper_single = new Swiper('.single-item', {autoplay:3000});
         var swiper_news_slider = new Swiper('.news-slider');
-        var swiper_home_slider = new Swiper('.homepage-slider', {autoplay:3000});
+        //var swiper_home_slider = new Swiper('.homepage-slider', {autoplay:3000});
         var swiper_quote_slider = new Swiper('.quote-slider', {autoplay:3000});
         var swiper_coverpage = new Swiper('.coverpage-slider', {autoplay:3000});
         var swiper_homecover = new Swiper('.homepage-cover-slider', {
@@ -1179,6 +1179,7 @@ function LoadPlace(model) {
     var slider = "";
     var info = "";
 
+    //slider = slider + "<div class='swiper-wrapper'>";
     for (var j = 0; j < place.GalleryImages.length; j++) {
 
         slider = slider + "<div class='swiper-slide'>";
@@ -1187,8 +1188,10 @@ function LoadPlace(model) {
         slider = slider + "<div class='overlay'></div>";
         slider = slider + "</div>";
     }
+    //slider = slider + "</div>";
                             
     $("#place-slider-wrap").html(slider);
+    CreateSlider();
     
     info = info + "<h4 class='bold'>" + place.Name + "</h4>";
     info = info + "<div class='place-info'>";
@@ -1307,10 +1310,14 @@ function LoadTour(model) {
         iteniraries = iteniraries + "<div class='internary'>";
         iteniraries = iteniraries + "<div class='internary-left'>";
         iteniraries = iteniraries + "<div class='internary-image-square'><img class='responsive-image' alt='img' src='" + itenirary.CoverImage + "' style='display: block;'></div>";
-        iteniraries = iteniraries + "<div class='center-text'><img class='responsive-image internary-walk-icon' alt='img' src='images/demo/walk.png' style='display: block;'></div>";
-        iteniraries = iteniraries + "<div class='center-text'>" + itenirary.WalkMinutes + " minutes</div>";
-        iteniraries = iteniraries + "<div class='center-text'><img class='responsive-image internary-drive-icon' alt='img' src='images/demo/drive.fw.png' style='display: block;'></div>";
-        iteniraries = iteniraries + "<div class='center-text'>" + itenirary.DriveMinutes + " minutes</div>";
+        if (itenirary.WalkMinutes > 0) {
+            iteniraries = iteniraries + "<div class='center-text'><img class='responsive-image internary-walk-icon' alt='img' src='images/demo/walk.png' style='display: block;'></div>";
+            iteniraries = iteniraries + "<div class='center-text'>" + itenirary.WalkMinutes + " minutes</div>";
+        }
+        if (itenirary.DriveMinutes > 0) {
+            iteniraries = iteniraries + "<div class='center-text'><img class='responsive-image internary-drive-icon' alt='img' src='images/demo/drive.fw.png' style='display: block;'></div>";
+            iteniraries = iteniraries + "<div class='center-text'>" + itenirary.DriveMinutes + " minutes</div>";
+        }
         iteniraries = iteniraries + "<div class='center-text'><i class='fa fa-long-arrow-down'></i></div>";
         iteniraries = iteniraries + "</div>";
         iteniraries = iteniraries + "<div class='internary-right'>";
@@ -1346,6 +1353,33 @@ function SetSiteCategoryActive(catID)
 function SetActivePlaceID(placeID, placeOrigin) {
     localStorage.PlaceActiveID = placeID;
     localStorage.Previous = placeOrigin;
+}
+
+function CreateSlider() {
+    var swiper_home_slider = new Swiper('.homepage-slider', {
+        //pagination: '.swiper-pagination',
+        //paginationClickable: true,
+        //slidesPerView: 1,
+        //spaceBetween: 20,
+        //breakpoints: {
+        //    1024: {
+        //        slidesPerView: 6,
+        //        spaceBetween: 20
+        //    },
+        //    768: {
+        //        slidesPerView: 5,
+        //        spaceBetween: 10
+        //    },
+        //    640: {
+        //        slidesPerView: 3,
+        //        spaceBetween: 5
+        //    },
+        //    320: {
+        //        slidesPerView: 3,
+        //        spaceBetween: 5
+        //    }
+        //}
+    });
 }
 
 
