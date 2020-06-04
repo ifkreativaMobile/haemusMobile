@@ -5,7 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <link rel="icon" type="image/png" href="/images/splash/android-chrome-192x192.png" sizes="192x192">
+    <!--<link rel="icon" type="image/png" href="/images/splash/android-chrome-192x192.png" sizes="192x192">
     <link rel="apple-touch-icon" sizes="196x196" href="/images/splash/apple-touch-icon-196x196.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/splash/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/splash/apple-touch-icon-152x152.png">
@@ -18,8 +18,8 @@
     <link rel="apple-touch-icon" sizes="57x57" href="/images/splash/apple-touch-icon-57x57.png">
     <link rel="icon" type="image/png" href="/images/splash/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="/images/splash/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/splash/favicon-16x16.png" sizes="16x16">
-    <link rel="shortcut icon" href="/images/splash/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" href="/images/splash/favicon-16x16.png" sizes="16x16">-->
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 
@@ -33,6 +33,7 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/swiper.min.js"></script>
     <script type="text/javascript" src="scripts/plugins.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
@@ -113,27 +114,13 @@
                     <div class="decoration hide-if-responsive"></div>
                     <div class="one-half-responsive last-column">
                         <div class="container no-bottom">
-                            <h4>HAEMUS</h4>
-                            <strong class="lh20 display-ib">Center for scientific research and<br />promotion of culture</strong>
-                            <p class="lh20 mb10">We would like to introduce briefly our organization. We are founded in 2012 and until today we’ve grown up as the only organization of this kind in the Balkans. HAEMUS strives to promote scientific research and culture on the Balkan Peninsula, offering a wide range cultural heritage services. These fall into several categories, including: research, cultural resource management, publication, education, promotion and tourism.</p>
+                            <h4>CONTACT</h4>
                             <p class="">
-                                <a href="tel: +38977432861" class="contact-call"><i class="fa fa-phone"></i>+ +389 77 432 861</a>
-                                <a href="mailto:contact@haemus.mk" class="contact-mail"><i class="fa fa-envelope"></i>contact@haemus.mk</a>
+                                <a class="contact-subtitle"><img src="images/haemus-logo.jpg" class="haemus-logo" />HAEMUS - Centre for Scientific Research and Promotion of Culture</a>
                                 <a class="contact-mail"><i class="fa fa-globe"></i>www.haemus.org.mk</a>
-                                <a href="https://www.facebook.com/haemus.org.mk" class="contact-facebook"><i class="fa fa-facebook"></i>enabled.labs</a>
-                                <a href="https://twitter.com/HAEMUSorg" class="contact-twitter"><i class="fa fa-twitter"></i>@haemus.org.mk</a>
+                                <a href="mailto:contact@haemus.mk" class="contact-mail"><i class="fa fa-envelope"></i>contact@haemus.mk</a>
+                                <a href="tel: +38977432861" class="contact-call"><i class="fa fa-phone"></i>Mobile/Viber +389 77 432 861</a>
                             </p>
-                            <div>
-                                <strong> Project is sponsored and finaced by:</strong>
-                                <h5>Forum Ziviler Friedensdienst e.V</h5>
-                                <span>Forum Civil Peace Service</span><br />
-                                <span>Naum Naumovski-Borche 88A, 1000 Skopje</span>
-                            </div>
-                            <!--<p>
-                                <strong>HAEMUS | Contact Us</strong><br>
-                                121 King Street, Melbourne <br>
-                                Victoria 3000 Australia
-                            </p>-->
                         </div>
                     </div>
                 </div>
@@ -188,6 +175,12 @@
                         <a class="menu-item" href="sitesCategories.html">
                             <i class="fa fa-navicon bg-green-dark"></i>
                             <em>Sites</em>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="menu-item" href="about.html">
+                            <i class="fa fa-comment-o bg-blue-dark"></i>
+                            <em>About Us</em>
                         </a>
                     </div>
                     <div>

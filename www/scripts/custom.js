@@ -933,7 +933,7 @@ function LoadMap(model) {
         for (var j = 0; j < model["Sites"].length; j++ )
         {
             var site = model["Sites"][j];
-            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitects: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.shortDescription, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `map.html`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
+            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitect: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.shortDescription, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `map.html`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
         }
 
         var marker, i;
@@ -985,7 +985,7 @@ function LoadMapPath(model) {
         var locations = [];
         for (var j = 0; j < model["Sites"].length; j++) {
             var site = model["Sites"][j];
-            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitects: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.Description, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `tour.html?tourID=" + model.TourID + "`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
+            locations.push(["<span class='place-title'>" + site.Name + "</span><br><span class='map-address'>Address: " + site.Address + "</span><br><span class='map-address'>Arhitect: " + site.Authors + "</span><br><span class='map-text'>" + truncateString(site.Description, 120) + "</span><a class='place-link' onclick='SetActivePlaceID(" + site.SiteID + ", `tour.html?tourID=" + model.TourID + "`)' href='place.html'>Read more</a>", site.Latitude, site.Longitude, site.IconImage]);
         }
 
         var tourPaths = [];
@@ -1018,7 +1018,7 @@ function LoadMapPath(model) {
                 var icons = line.get('icons');
                 icons[0].offset = (count / 2) + '%';
                 line.set('icons', icons);
-            }, 20);
+            }, 50);
         }
         var tourPath = new google.maps.Polyline({
             path: tourPaths,
@@ -1067,6 +1067,10 @@ function LoadMapPath(model) {
         google.maps.event.trigger(markers[id], 'click');
     }
     initialize();
+}
+
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
 }
 
 function scrollToTop() {
@@ -1188,6 +1192,8 @@ function LoadPlace(model) {
         slider = slider + "<div class='overlay'></div>";
         slider = slider + "</div>";
     }
+    //slider = slider + "<div class='swiper-button-next'></div>";
+    //slider = slider + "<div class='swiper-button-prev'></div>"
     //slider = slider + "</div>";
                             
     $("#place-slider-wrap").html(slider);
@@ -1197,14 +1203,14 @@ function LoadPlace(model) {
     info = info + "<div class='place-info'>";
     info = info + "<span><b>Address: </b>" + place.Address + "</span><br />";
     info = info + "<span><b>Working hours: </b>" + place.WorkingHours + "</span><br />";
-    info = info + "<span><b>Architects: </b>" + place.Authors + "</span><br />";
+    info = info + "<span><b>Architect: </b>" + place.Authors + "</span><br />";
     info = info + "<span><b>Year: </b>" + place.Year + "</span>";
     info = info + "</div>";
 
     info = info + "<div class='wrap-desc place-text half-bottom'>" + place.Description + "</div>";
-    info = info + "<div class='responsive-video full-bottom'>" + place.YouTube;
-    info = info + "</div>";
-    info = info + " <div class='decoration'></div>";
+    if ( !isBlank(place.YouTube))
+        info = info + "<div class='responsive-video full-bottom'>" + place.YouTube + "</div>";
+    info = info + "<div class='decoration'></div>";
 
     $("#").attr("href", localStorage.Previous);
     $("#place-info-wrap").html(info);
@@ -1244,7 +1250,6 @@ function LoadSiteCategory(model) {
     html = html + "<div class='overlay'></div>";
     html = html + "<img class='' src='images/demo/proba.jpg' alt='img'></div>";
 
-    
     html = html + "<div class='sites-list'>";
 
     for (var j = 0; j < category.Sites.length; j++) {
@@ -1259,7 +1264,7 @@ function LoadSiteCategory(model) {
         html = html + "<h4 class='page-blog-title'>" + site.Name + "</h4>";
         html = html + "<div class='page-blog-tags-wrap'>";
         html = html + "<strong class='page-blog-tags'>Address: " + site.Address + "</strong></br>";
-        html = html + "<strong class='page-blog-tags'>Arhitects: " + site.Authors + "</strong></br>";
+        html = html + "<strong class='page-blog-tags'>Arhitect: " + site.Authors + "</strong></br>";
         html = html + "<strong class='page-blog-tags'>Year: " + site.Year + "</strong>";
         html = html + "</div>";
         html = html + "<div class='page-blog-content'>" + truncateString(site.Description, 250);
@@ -1295,7 +1300,7 @@ function LoadTour(model) {
         sites = sites + "<h4 class='page-blog-title'>" + site.Name + "</h4>";
         sites = sites + "<div class='page-blog-tags-wrap'>";
         sites = sites + "<strong class='page-blog-tags'>Address: " + site.Address + "</strong>";
-        sites = sites + "<strong class='page-blog-tags'>Arhitects: " + site.Authors + "</strong>";
+        sites = sites + "<strong class='page-blog-tags'>Arhitect: " + site.Authors + "</strong>";
         sites = sites + "<strong class='page-blog-tags'>Year: " + site.Year + "</strong>";
         sites = sites + "</div>";
         sites = sites + "<div class='page-blog-content'>" + site.Description + "</div>";
@@ -1357,6 +1362,14 @@ function SetActivePlaceID(placeID, placeOrigin) {
 
 function CreateSlider() {
     var swiper_home_slider = new Swiper('.homepage-slider', {
+        observer: true,
+        observeParents: true,
+        preventClicks: false,
+        preventClicksPropagation: false,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         //pagination: '.swiper-pagination',
         //paginationClickable: true,
         //slidesPerView: 1,
