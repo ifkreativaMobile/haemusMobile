@@ -1338,7 +1338,9 @@ function LoadTour(model) {
     $("#tab-2").html(iteniraries);
     LoadMapPath(selectedTour);
 
-    $("#booking-link").attr("onclick", "navigator.app.loadUrl('" + selectedTour.BookingLink + "', { openExternal:true });");
+    //$("#booking-link").attr("onclick", "navigator.app.loadUrl('" + selectedTour.BookingLink + "', { openExternal:true });");
+    $("#booking-link").attr("onclick", window.open(selectedTour.BookingLink, '_system'));
+    //window.open(link, '_system');
 }
 
 function truncateString(str, length) {
